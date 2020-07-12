@@ -22,6 +22,8 @@ class CreateProductsTable extends Migration
             $table->double('previous_amount')->unsignedInteger();
             $table->string('featured_image');
             $table->string('reference');
+            $table->boolean('status')->default(0); //unpublished = 0; published = 1;
+            $table->string('link');
             $table->timestamps();
         });
     }
