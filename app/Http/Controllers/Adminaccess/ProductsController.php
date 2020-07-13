@@ -46,4 +46,40 @@ class ProductsController extends Controller
         ]));
         return redirect()->route('products.index')->with(['message' => 'Product added successfully']);
     }
+
+    public function edit($product)
+    {
+        $categories = Category::all();
+        $product = Product::with('category')->where('reference', $product)->firstOrFail();
+        return view('admin.product.edit', compact('product', 'categories'));
+    }
+    public function update($product)
+    {
+        $product = Product::where('reference', $product)->first();
+        $data  = request()->validate([
+            'name' => 'required|string',
+            'description' => 'required|string',
+            'amount' => 'required',
+            'category' => 'required',
+            'link' => 'required|string',
+        ]);
+        if(request()->has('featured_image')){
+            $fileNameWithExtension = request()->file('featured_image')->getClientOriginalExtension();
+            $fileNameToStore  = Str::slug(request('name')).uniqid(). ".".$fileNameWithExtension;
+            $filePath = storage_path('app/public/uploads/products/');
+            $fileUploadPath = request()->featured_image->move($filePath, $fileNameToStore);
+            $product->featured_image = $fileNameToStore;
+            $product->save();
+        }
+        $product->update(array_merge($data, [
+            'previous_amount' => request('previous_amount'),
+        ]));
+        return redirect()->route('products.index')->with('message', 'Product updated successfully');
+    }
+    public function destroy($product)
+    {
+        $product = Product::where('reference', $product)->firstOrFail();
+        $product->delete();
+        return back()->with('message', 'Product deleted successfully');
+    }
 }
