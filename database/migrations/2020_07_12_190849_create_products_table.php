@@ -19,7 +19,7 @@ class CreateProductsTable extends Migration
             $table->foreignId('category_id')->constrained('categories')->onDeleted('cascade');
             $table->text('description')->nullable();
             $table->double('amount')->unsignedInteger();
-            $table->double('previous_amount')->unsignedInteger();
+            $table->double('previous_amount')->unsignedInteger()->nullable();
             $table->string('featured_image');
             $table->string('reference');
             $table->boolean('status')->default(0); //unpublished = 0; published = 1;
