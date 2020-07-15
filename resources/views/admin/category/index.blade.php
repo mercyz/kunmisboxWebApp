@@ -12,15 +12,15 @@
         </tr>
     </thead>
     <tbody>
-        @foreach($categorys as $Category)
+        @foreach($categories as $key => $category)
         <tr>
-            <td>{{$Category->id}}</td>
-            <td>{{$Category->name}}</td>
+            <td>{{$key +1}}</td>
+            <td>{{$category->name}}</td>
             <td>
-                <a href="{{ route('category.edit',$Category->id)}}" class="btn btn-primary">Edit</a>
+                <a href="{{ route('categories.edit', $category->id)}}" class="btn btn-primary">Edit</a>
             </td>
             <td>
-                <form action="{{ route('category.destroy', $Category->id)}}" method="post">
+                <form action="{{ route('categories.destroy', $category->id)}}" method="post">
                   @csrf
                   @method('DELETE')
                   <button class="btn btn-danger" type="submit">Delete</button>

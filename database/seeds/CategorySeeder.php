@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
 use App\Models\Category;
 
 class CategorySeeder extends Seeder
@@ -17,7 +18,8 @@ class CategorySeeder extends Seeder
         $categories = ['men', 'women', 'kids', 'accessories', 'cloth', 'shoes', 'jewellery', 'watches', 'sports', 'health & beauty', 'uncategorized'];
         foreach($categories as $category){
             factory(Category::class)->create([
-                'name' => $category
+                'name' => $category,
+                'slug' => Str::slug($category)
             ]);
         }
         Schema::enableForeignKeyConstraints();

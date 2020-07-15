@@ -22,5 +22,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['prefix' => 'adminaccess'], function(){
     Route::resource('products', 'Adminaccess\ProductsController');
-    Route::resource('category', 'Adminaccess\categoryController');
+    Route::resource('categories', 'Adminaccess\CategoriesController');
 });
