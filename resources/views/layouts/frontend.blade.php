@@ -109,7 +109,7 @@
                 <div class="row">
                     <div class="col-xl-3 col-lg-2 col-sm-5 col-5">
                         <div class="logo">
-                            <a href="index.html"><img src="img/logo/logo.png" alt="logo-image"></a>
+                            <a href="/"><img src="{{asset('img/logo/logo.png')}}" alt="logo-image"></a>
                         </div>
                     </div>
                     <!-- Primary Vertical-Menu End -->
@@ -175,8 +175,8 @@
                                             </div>
                                             <!-- Cart Footer Inner End -->
                                         </li>
-                                    </ul> --}}
-                                </li>
+                                    </ul> 
+                                 </li> --}}
                             </ul>
                         </div>
                     </div>
