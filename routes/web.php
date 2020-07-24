@@ -13,14 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'Frontend\HomeController@index')->name('front');
+Route::get('/about', 'Frontend\HomeController@index')->name('about');
+Route::get('/shop', 'Frontend\HomeController@index')->name('shop');
+Route::get('/contact', 'Frontend\HomeController@index')->name('contact');
 
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
-Route::group(['prefix' => 'adminaccess'], function(){
+Route::group(['prefix' => 'adminaccess'], function () {
     Route::resource('products', 'Adminaccess\ProductsController');
     Route::resource('categories', 'Adminaccess\CategoriesController');
 });

@@ -18,6 +18,8 @@ $factory->define(Product::class, function (Faker $faker) {
         'category_id' => mt_rand(1, 8),
         'featured_image' => 'productImage.png',
         'status' => mt_rand(0, 1),
+        'featured' => mt_rand(0, 1),
+        'instock' => mt_rand(0, 1),
         'link' => env('APP_URL').'/product/'.Str::slug($name).'-'.$reference,
     ];
 });
