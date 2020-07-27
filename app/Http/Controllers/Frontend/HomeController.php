@@ -32,8 +32,16 @@ class HomeController extends Controller
     }
     public function shop()
     {
-        $products = Product::where('status', 1)->paginate(20);
-        return view('frontend.shop', compact('products'));
+        $categories = Category::all();
+        $products = Product::where('status', 1)->paginate(21);
+        return view('frontend.shop', compact('products', 'categories'));
+    }
+    public function search_by_category($category)
+    {
+        $categories = Category::all();
+        $cat = Category::where('slug', $category)->firstOrFail();
+        $products = Product::where('category_id', $cat->id)->paginate(20);
+        return view('frontend.cat_search', compact('products', 'cat', 'categories'));
     }
     public function about()
     {

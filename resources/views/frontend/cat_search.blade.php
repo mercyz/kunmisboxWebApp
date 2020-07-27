@@ -47,7 +47,7 @@
                         <ul class="list-inline nav">
                             <li><a class="active" data-toggle="tab" href="#grid-view"><i class="fa fa-th"></i></a></li>
                             <li><a data-toggle="tab" href="#list-view"><i class="fa fa-list-ul"></i></a></li>
-                            <li><span class="grid-item-list"> Items 1 - {{$products->count()}}</span></li>
+                            <li><span class="grid-item-list text-capitalize">{{$cat->name}}</span></li>
                         </ul>
                     </div>
                 </div>
@@ -102,7 +102,7 @@
                             <div class="single-product">
                                 <!-- Product Image Start -->
                                 <div class="pro-img">
-                                    <a href="product.html">
+                                    <a href="#">
                                         <img class="primary-img" src="img/products/1.jpg" alt="single-product">
                                         <img class="secondary-img" src="img/products/2.jpg" alt="single-product">
                                     </a>
