@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Models\Adbanner;
 
 class AdbannerSeeder extends Seeder
 {
@@ -11,6 +12,7 @@ class AdbannerSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Adbanner::truncate();
+        factory(Adbanner::class, 9)->create();
     }
 }

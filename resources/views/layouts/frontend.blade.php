@@ -40,6 +40,16 @@
 
     <!-- modernizr js -->
     <script src="{{asset('js/vendor/modernizr-2.8.3.min.js')}}"></script>
+    <style type="text/css">
+        .logo a{
+            font-size: 30px;
+            font-weight: 800;
+            font-family: Lily Script One;
+        }
+        .logo a:hover{
+            color:#000;
+        }
+    </style>
 </head>
 
 <body>
@@ -109,7 +119,8 @@
                 <div class="row">
                     <div class="col-xl-3 col-lg-2 col-sm-5 col-5">
                         <div class="logo">
-                            <a href="/"><img src="{{asset('img/logo/logo.png')}}" alt="logo-image"></a>
+                            {{-- <a href="/"><img src="{{asset('img/logo/logo.png')}}" alt="logo-image"></a> --}}
+                            <a href="/">Kunmis<span style="color:#ff324d;">Box</span></a>
                         </div>
                     </div>
                     <!-- Primary Vertical-Menu End -->

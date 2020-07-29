@@ -13,6 +13,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['prefix' => 'adminaccess'], function () {
     Route::get('dashboard', 'Adminaccess\DashboardController@index')->name('dashboard');
-    Route::resource('products', 'Adminaccess\ProductsController');
-    Route::resource('categories', 'Adminaccess\CategoriesController');
+    Route::resource('products', 'Adminaccess\ProductsController')->except('show');
+    Route::resource('categories', 'Adminaccess\CategoriesController')->except('show');
+    Route::resource('adbanner', 'Adminaccess\AdbannerController')->except('show');
 });

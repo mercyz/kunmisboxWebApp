@@ -6,26 +6,20 @@
     <div class="container">
        <div class="row">
            <!-- Single Banner Start -->
-           <div class="col-sm-4">
-                <div class="single-banner zoom">
-                    <a href="#"><img src="img/banner/3.jpg" alt="slider-banner"></a>
+           @if($firstBanners->count() === 3 )
+               @foreach($firstBanners as $firstBanner)
+               <div class="col-sm-4">
+                    <div class="single-banner zoom">
+                        @if($firstBanner->image !== 'placeholder.png')
+                        <a href="{{$firstBanner->link}}"><img src="{{asset('storage/uploads/adbanner/' .$firstBanner->image)}}" ></a>
+                        @else
+                         <a href="#"><img src="img/banner/3.jpg" alt="slider-banner"></a>
+                        @endif
+                    </div>
                 </div>
-            </div>
-           <!-- Single Banner End -->
-            <!-- Single Banner Start -->
-           <div class="col-sm-4">
-                <div class="single-banner zoom">
-                    <a href="#"><img src="img/banner/4.jpg" alt="slider-banner"></a>
-                </div>
-            </div>
-           <!-- Single Banner End -->
-            <!-- Single Banner Start -->
-           <div class="col-sm-4">
-                <div class="single-banner zoom">
-                    <a href="#"><img src="img/banner/5.jpg" alt="slider-banner"></a>
-                </div>
-            </div>
-           <!-- Single Banner End -->
+               <!-- Single Banner End -->
+               @endforeach
+           @endif
        </div>
        <!-- Row End -->
     </div>
@@ -48,8 +42,13 @@
                 <!-- Product Image Start -->
                 <div class="pro-img">
                     <a href="{{route('product.detail', $mw->slug)}}">
+                        @if($mw->featured_image !== 'productImage.png')
+                            <img class="primary-img" src="{{asset('/storage/uploads/products/featured/' .$mw->featured_image)}}">
+                            <img class="secondary-img" src="{{asset('/storage/uploads/products/featured/' .$mw->featured_image)}}">
+                        @else
                         <img class="primary-img" src="img/products/7.jpg" alt="single-product">
                         <img class="secondary-img" src="img/products/8.jpg" alt="single-product">
+                       @endif 
                     </a>
                 </div>
                 <!-- Product Image End -->
@@ -89,20 +88,21 @@
 <div class="upper-banner banner pb-60">
     <div class="container">
        <div class="row">
+        @if($secondBanners->count() === 2)
+        @foreach($secondBanners as $secondBanner)
            <!-- Single Banner Start -->
            <div class="col-sm-6">
                 <div class="single-banner zoom">
+                    @if($secondBanner->image !== 'placeholder.png')
+                    <a href="{{$secondBanner->link}}"><img src="{{asset('storage/uploads/adbanner/' .$secondBanner->image)}}"></a>
+                    @else
                     <a href="#"><img src="img/banner/1.png" alt="slider-banner"></a>
+                    @endif
                 </div>
             </div>
            <!-- Single Banner End -->
-            <!-- Single Banner Start -->
-           <div class="col-sm-6">
-                <div class="single-banner zoom">
-                    <a href="#"><img src="img/banner/2.png" alt="slider-banner"></a>
-                </div>
-            </div>
-           <!-- Single Banner End -->
+        @endforeach
+        @endif
        </div>
        <!-- Row End -->
     </div>
@@ -131,7 +131,13 @@
                             @foreach($sh as $top)
                             <div class="single-product">
                                 <div class="pro-img">
-                                    <a href="{{route('product.detail', $top->slug)}}"><img class="img" src="img/products/1.jpg" alt="product-image"></a>
+                                    <a href="{{route('product.detail', $top->slug)}}">
+                                        @if($top->featured_image !== "productImage.png")
+                                        <img class="img" src="{{asset('storage/uploads/products/featured/' . $top->featured_image)}}">
+                                        @else
+                                        <img class="img" src="img/products/1.jpg" alt="product-image">
+                                        @endif
+                                    </a>
                                 </div>
                                 <div class="pro-content">
                                     <div class="product-rating">
@@ -176,8 +182,13 @@
                                     <!-- Product Image Start -->
                                     <div class="pro-img">
                                         <a href="{{route('product.detail', $product->slug)}}">
-                                            <img class="primary-img" src="img/products/1.jpg" alt="single-product">
+                                            @if($product->featured_image !== "productImage.png")
+                                            <img class="primary-img" src="{{asset('storage/uploads/products/featured/' . $product->featured_image)}}">
+                                            <img class="secondary-img" src="{{asset('storage/uploads/products/featured/' . $product->featured_image)}}">
+                                            @else
+                                              <img class="primary-img" src="img/products/1.jpg" alt="single-product">
                                             <img class="secondary-img" src="img/products/2.jpg" alt="single-product">
+                                            @endif
                                         </a>
                                     </div>
                                     <!-- Product Image End -->
@@ -220,8 +231,13 @@
                                     <!-- Product Image Start -->
                                     <div class="pro-img">
                                         <a href="#">
-                                            <img class="primary-img" src="img/products/4.jpg" alt="single-product">
+                                            @if($featured->featured_image !=="productImage.png")
+                                            <img class="primary-img" src="{{asset('storage/uploads/products/featured/' .$featured->featured_image)}}">
+                                            <img class="secondary-img" src="{{asset('storage/uploads/products/featured/' .$featured->featured_image)}}">
+                                            @else
+                                                <img class="primary-img" src="img/products/4.jpg" alt="single-product">
                                             <img class="secondary-img" src="img/products/3.jpg" alt="single-product">
+                                            @endif
                                         </a>
                                     </div>
                                     <!-- Product Image End -->
@@ -256,9 +272,18 @@
                         </div>
                     </div>
                     <!-- Tab-Content End -->
-                    <div class="single-banner zoom mt-30 ">
-                    <a href="#"><img src="img/banner/tab-banner.jpg" alt="slider-banner"></a>
-                </div>
+                <div class="single-banner zoom mt-30" style="height: 240px;">
+                    @if($thirdBanners->count() >= 1)
+                    @foreach($thirdBanners as $thirdBanner)
+                    @if($thirdBanner->image !=='placeholder.png')
+                    <a href="#" style="width: 870px;"><img style="height:auto" src="{{('storage/uploads/adbanner/' .$thirdBanner->image)}}"></a>
+                    @else
+                     <a href="#"><img src="{{asset('img/banner/tab-banner.jpg')}}" alt="slider-banner"></a>
+                     @endif
+                    @endforeach
+                   
+                    @endif
+                 </div>
                 </div>
                 <!-- New Pro Content End -->                        
             </div>
@@ -345,7 +370,11 @@
                 @foreach($recommend as $rec)
                 <div class="single-product">
                     <div class="pro-img">
-                        <a href="{{route('product.detail', $rec->slug)}}"><img class="img" src="img/products/1.jpg" alt="product-image"></a>
+                        @if($rec->featured_image !== 'productImage.png')
+                        <a href="{{route('product.detail', $rec->slug)}}"><img class="img" src="{{asset('storage/uploads/products/featured/' . $rec->featured_image)}}"></a>
+                        @else
+                        <a href=""><img src="{{asset('img/products/1.jpg')}}"></a>
+                        @endif
                     </div>
                     <div class="pro-content">
                         <div class="product-rating">

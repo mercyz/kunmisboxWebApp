@@ -15,6 +15,12 @@ class CreateAdbannersTable extends Migration
     {
         Schema::create('adbanners', function (Blueprint $table) {
             $table->id();
+            $table->string('title')->nullable();
+            $table->string('slug')->nullable();
+            $table->string('image');
+            $table->enum('adposition', ['first', 'second', 'third']); //Postion the ad on the home page
+            $table->boolean('status')->default(0); //Published = 1; Unpublished = 0;
+            $table->string('link')->nullable();
             $table->timestamps();
         });
     }

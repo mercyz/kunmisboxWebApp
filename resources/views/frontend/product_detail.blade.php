@@ -5,7 +5,7 @@
     <div class="container">
         <div class="breadcrumb">
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li><a href="{{route('shop')}}">Shop</a></li>
                 <li class="active"><a href="#">Product</a></li>
             </ul>
@@ -23,16 +23,11 @@
                 <!-- Thumbnail Large Image start -->
                 <div class="tab-content">
                     <div id="thumb1" class="tab-pane active">
+                        @if($product->featured_image !== 'productImage.png')
+                        <a data-fancybox="images" href="{{asset('storage/uploads/products/featured/' . $product->featured_image)}}"><img src="{{asset('storage/uploads/products/featured/' . $product->featured_image)}}"></a>
+                        @else
                         <a data-fancybox="images" href="{{asset('img/products/1.jpg')}}"><img src="{{asset('img/products/1.jpg')}}" alt="product-view"></a>
-                    </div>
-                    <div id="thumb2" class="tab-pane">
-                        <a data-fancybox="images" href="img/products/2.jpg"><img src="img/products/2.jpg" alt="product-view"></a>
-                    </div>
-                    <div id="thumb3" class="tab-pane">
-                        <a data-fancybox="images" href="img/products/3.jpg"><img src="img/products/3.jpg" alt="product-view"></a>
-                    </div>
-                    <div id="thumb4" class="tab-pane">
-                        <a data-fancybox="images" href="img/products/4.jpg"><img src="img/products/4.jpg" alt="product-view"></a>
+                        @endif
                     </div>
                 </div>
                 <!-- Thumbnail Large Image End -->
@@ -40,10 +35,10 @@
                 <!-- Thumbnail Image End -->
                 <div class="product-thumbnail">
                     <div class="thumb-menu nav">
-                            <a class="active" data-toggle="tab" href="#thumb1"> <img src="img/products/1.jpg" alt="product-thumbnail"></a>
-                            <a data-toggle="tab" href="#thumb2"> <img src="img/products/2.jpg" alt="product-thumbnail"></a>
-                            <a data-toggle="tab" href="#thumb3"> <img src="img/products/3.jpg" alt="product-thumbnail"></a>
-                            <a data-toggle="tab" href="#thumb4"> <img src="img/products/4.jpg" alt="product-thumbnail"></a>
+                        @foreach($productImages as $image)
+                            <a class="active" data-toggle="tab" href="#thumb1"> <img src="{{('/storage/uploads/products/' .$image->name)}}"></a>
+                        @endforeach
+                           
                     </div>
                 </div>
                 <!-- Thumbnail image end -->
@@ -173,8 +168,13 @@
                             <!-- Product Image Start -->
                             <div class="pro-img">
                                 <a href="{{route('product.detail', $product->slug)}}">
+                                    @if($related->featured_image !=='productImage.png')
+                                    <img class="primary-img" src="{{asset('storage/uploads/products/featured/' .$related->featured_image)}}" alt="">
+                                    <img class="secondary-img" src="{{asset('storage/uploads/products/featured/' .$related->featured_image)}}">
+                                    @else
                                     <img class="primary-img" src="{{asset('img/products/4.jpg')}}" alt="">
                                     <img class="secondary-img" src="img/products/2.jpg">
+                                    @endif
                                 </a>
                             </div>
                             <!-- Product Image End -->
@@ -191,14 +191,16 @@
                                 <p><span class="price">&#8358;{{$related->amount}}</span><del class="prev-price">&#8358;{{$related->previous_amount}}</del></p>
                                 <div class="pro-actions">
                                     <div class="actions-secondary">
-                                        <a href="wishlist.html" data-toggle="tooltip" title="Add to Wishlist"><i class="fa fa-heart"></i></a>
-                                        <a class="add-cart" href="#" data-toggle="tooltip" title="Add to Cart">Buy Now</a>
+                                        <a href="#" data-toggle="tooltip" title="Add to Wishlist"><i class="fa fa-heart"></i></a>
+                                        <a class="add-cart" href="{{$related->link}}" data-toggle="tooltip" title="Buy Now">Buy Now</a>
                                         <a href="#" data-toggle="tooltip" title="Buy Now"><i class="fa fa-shopping-cart"></i></a>
                                     </div>
                                 </div>
                             </div>
                             <!-- Product Content End -->
-                            <span class="sticker-new">-32%</span>
+                           @if($related->instock === 1)
+                                <span class="sticker-new">sold</span>
+                            @endif
                         </div>
                         <!-- Single Product End -->  
                         @endforeach

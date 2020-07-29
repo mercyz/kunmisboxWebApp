@@ -49,6 +49,7 @@ class ProductsController extends Controller
             'category_id' => request('category'),
             'previous_amount' => request('previous_amount'),
             'slug' => Str::slug(request('name')).'-'.uniqid(),
+            'status' => request('status'),
         ]));
 
         //Handle Product Images
@@ -114,6 +115,7 @@ class ProductsController extends Controller
         $product->update(array_merge($data, [
             'previous_amount' => request('previous_amount'),
             'slug' => Str::slug(request('name')).'-'.uniqid(),
+            'status' => request('status'),
         ]));
         return redirect()->route('products.index')->with('message', 'Product updated successfully');
     }

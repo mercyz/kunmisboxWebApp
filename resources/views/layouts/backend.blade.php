@@ -161,19 +161,19 @@
       ></a>
       <ul class="treeview-menu">
         <li>
-          <a class="treeview-item" href="table-basic.html"
+          <a class="treeview-item" href="{{route('adbanner.index')}}"
             ><i class="icon fa fa-circle-o"></i> All Banners</a
           >
         </li>
         <li>
-          <a class="treeview-item" href="table-data-table.html"
+          <a class="treeview-item" href="{{route('adbanner.create')}}"
             ><i class="icon fa fa-circle-o"></i> Add Banner</a
           >
         </li>
       </ul>
     </li>
      <li>
-      <a class="app-menu__item" href="charts.html"
+      <a class="app-menu__item" href="#"
         ><i class="app-menu__icon fa fa-unlock"></i
         ><span class="app-menu__label">Logout</span></a
       >

@@ -10,7 +10,7 @@
     </ul>
   </div>
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-8">
       <div class="tile">
         <h3 class="tile-title">Add a new product</h3>
         @if($errors->any())
@@ -37,29 +37,43 @@
                 <label>Description</label>
                 <textarea name="description" class="form-control" cols="30" rows="10"></textarea>   
             </div>
-            <div class="form-group">
-                <label>Price <small class="text-danger">required *</small> </label>
-                <input type="text" required="required" class="form-control" name="amount" placeholder="Enter amount">
-            </div>
-            <div class="form-group">
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label>Price <small class="text-danger">required *</small> </label>
+                    <input type="text" required="required" class="form-control" name="amount" placeholder="Enter amount">
+                </div>
+            <div class="form-group col-md-6">
                 <label>Previous Price <small class="text-danger">must be greater than current price</small> </label>
-                <input type="text" class="form-control" name="previous_amount" placeholder="Enter Previous Price">
+                <input type="text" class="form-control" name="previous_amount" placeholder="Enter Previous Price (Optional)">
+            </div>
             </div>
             <div class="form-group">
                 <label>Product Buy Link To Konga <small class="text-danger">required * </small> </label>
                 <input type="text" name="link" class="form-control" placeholder="Enter Product Buy Link">
             </div>
+           <div class="row">
+                <div class="form-group col-md-6">
+                    <label>Featured Image  <small class="text-danger">required *</small></label>
+                    <input type="file" name="featured_image" class="form-control">
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Status <small class="text-danger">required *</small></label>
+                    <select class="form-control" name="status">
+                        <option value="1">Active</option>
+                        <option value="0">Inactive</option>
+                    </select>
+                </div>
+           </div>
             <div class="form-group">
-                <label>Featured Image <small class="text-danger">required *</small></label>
-                <input type="file" name="featured_image" class="form-control">
-            </div>
-            <div class="form-group">
-                <label>Product Images</label>
+                <label>Product Images <small>(You can select multiple images)</small></label>
                 <input type="file" class="form-control" name="pro_image[]" multiple accept="image/*">
             </div>
             <button class="btn btn-success" type="submit">Add Product</button>
         </form>
       </div>
+    </div>
+    <div class="col-md-4">
+        <div class="tile"></div>
     </div>
   </div>
 </main>

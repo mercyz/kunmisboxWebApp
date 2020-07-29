@@ -63,9 +63,14 @@
                                     <div class="single-product">
                                         <!-- Product Image Start -->
                                         <div class="pro-img">
-                                            <a href="{{route('product.detail', $product->reference)}}">
-                                                <img class="primary-img" src="img/products/1.jpg" alt="single-product">
-                                                <img class="secondary-img" src="img/products/2.jpg" alt="single-product">
+                                             <a href="{{route('product.detail', $product->slug)}}">
+                                                @if($product->featured_image !== 'productImage.png')
+                                                <img class="primary-img" src="{{asset('storage/uploads/products/featured/' . $product->featured_image)}}">
+                                                <img class="secondary-img" src="{{asset('storage/uploads/products/featured/' . $product->featured_image)}}">
+                                                @else
+                                                <img class="primary-img" src="{{asset('img/products/1.jpg')}}" alt="single-product">
+                                                <img class="secondary-img" src="{{asset('img/products/2.jpg')}}" alt="single-product">
+                                                @endif
                                             </a>
                                         </div>
                                         <!-- Product Image End -->
@@ -102,10 +107,15 @@
                             <div class="single-product">
                                 <!-- Product Image Start -->
                                 <div class="pro-img">
-                                    <a href="#">
-                                        <img class="primary-img" src="img/products/1.jpg" alt="single-product">
-                                        <img class="secondary-img" src="img/products/2.jpg" alt="single-product">
-                                    </a>
+                                     <a href="{{route('product.detail', $product->slug)}}">
+                                                @if($product->featured_image !== 'productImage.png')
+                                                <img class="primary-img" src="{{asset('storage/uploads/products/featured/' . $product->featured_image)}}">
+                                                <img class="secondary-img" src="{{asset('storage/uploads/products/featured/' . $product->featured_image)}}">
+                                                @else
+                                                <img class="primary-img" src="{{asset('img/products/1.jpg')}}" alt="single-product">
+                                                <img class="secondary-img" src="{{asset('img/products/2.jpg')}}">
+                                                @endif
+                                            </a>
                                 </div>
                                 <!-- Product Image End -->
                                 <!-- Product Content Start -->
