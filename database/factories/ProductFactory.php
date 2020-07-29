@@ -20,6 +20,7 @@ $factory->define(Product::class, function (Faker $faker) {
         'status' => mt_rand(0, 1),
         'featured' => mt_rand(0, 1),
         'instock' => mt_rand(0, 1),
+        'slug' => Str::slug($name).'-'.uniqid(),
         'link' => env('APP_URL').'/product/'.Str::slug($name).'-'.$reference,
     ];
 });

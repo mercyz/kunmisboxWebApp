@@ -172,7 +172,7 @@
                         <div class="single-product">
                             <!-- Product Image Start -->
                             <div class="pro-img">
-                                <a href="{{route('product.detail', $product->reference)}}">
+                                <a href="{{route('product.detail', $product->slug)}}">
                                     <img class="primary-img" src="{{asset('img/products/4.jpg')}}" alt="">
                                     <img class="secondary-img" src="img/products/2.jpg">
                                 </a>

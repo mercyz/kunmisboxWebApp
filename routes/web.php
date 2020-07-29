@@ -12,6 +12,7 @@ Route::get('/search/{category}', 'Frontend\HomeController@search_by_category')->
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['prefix' => 'adminaccess'], function () {
+    Route::get('dashboard', 'Adminaccess\DashboardController@index')->name('dashboard');
     Route::resource('products', 'Adminaccess\ProductsController');
     Route::resource('categories', 'Adminaccess\CategoriesController');
 });

@@ -12,7 +12,9 @@ class ProductSeeder extends Seeder
      */
     public function run()
     {
+        Schema::disableForeignKeyConstraints();
         Product::truncate();
         factory(Product::class, 130)->create();
+        Schema::enableForeignKeyConstraints();
     }
 }

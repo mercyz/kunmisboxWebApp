@@ -1,24 +1,32 @@
-@extends('layouts.app')
-
+@extends('layouts.backend')
 @section('content')
-    <div class="container">
-      <div class="row">
-      @if ($errors->any())
-      <div class="alert alert-danger">
-        <ul>
+<main class="app-content">
+   <div class="app-title">
+      <h1><i class="fa fa-dashboard"></i> Add Category</h1>
+    <ul class="app-breadcrumb breadcrumb">
+      <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+      <li class="breadcrumb-item"><a href="#">Add Category</a></li>
+    </ul>
+  </div>
+   <div class="row">
+    <div class="col-md-12">
+      <div class="tile">
+        <h3 class="tile-title">Add Category</h3>
+          @if ($errors->any())
             @foreach ($errors->all() as $error)
-              <li>{{ $error }}</li>
+             <p style="padding:10px; color:#fff; background:red;">{{ $error }}</p>
             @endforeach
-        </ul>
-      </div><br />
-     @endif
-        <form class="" action="{{ route('categories.store')}}" method="POST">
+          @endif
+         <form class="" action="{{ route('categories.store')}}" method="POST">
         @csrf
           <div class="form-group">
-           <input type="text" class="form-control" name="name" required="required">
+           <input type="text" placeholder="Add Category" class="form-control" name="name" required="required">
           </div>
-            <button class="btn btn-primary"><i class="fa fa-plus"></i></button>
+            <button class="btn btn-success">Add Category</button>
         </form>
       </div>
+      </div>
     </div>
+  </div>
+</main>
 @endsection

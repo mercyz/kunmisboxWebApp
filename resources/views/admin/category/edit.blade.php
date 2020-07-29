@@ -1,23 +1,32 @@
-@extends('layouts.app')
+@extends('layouts.backend')
 @section('content')
-    <div class="container">
-      <div class="row">
-      @if ($errors->any())
-      <div class="alert alert-danger">
-        <ul>
+<main class="app-content">
+   <div class="app-title">
+      <h1><i class="fa fa-dashboard"></i> Edit Category</h1>
+    <ul class="app-breadcrumb breadcrumb">
+      <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+      <li class="breadcrumb-item"><a href="#">Edit Category</a></li>
+    </ul>
+  </div>
+   <div class="row">
+    <div class="col-md-12">
+      <div class="tile">
+        <h3 class="tile-title">Edit Category</h3>
+          @if ($errors->any())
             @foreach ($errors->all() as $error)
-              <li>{{ $error }}</li>
+             <p style="padding:10px; color:#fff; background:red;">{{ $error }}</p>
             @endforeach
-        </ul>
-      </div><br />
-     @endif
-        <form action="{{route('categories.update', $category->id)}}" method="POST">
+          @endif
+         <form class="" action="{{route('categories.update', $category->id)}}" method="POST">
         @csrf @method('put')
           <div class="form-group">
-           <input type="text" class="form-control" value="{{$category->name}}" name="name" required="required">
+           <input type="text" value="{{$category->name}}" placeholder="Add Category" class="form-control" name="name" required="required">
           </div>
-            <button class="btn btn-primary">Submit</button>
+            <button class="btn btn-success">Update Category</button>
         </form>
       </div>
+      </div>
     </div>
+  </div>
+</main>
 @endsection

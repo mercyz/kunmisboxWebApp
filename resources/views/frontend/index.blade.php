@@ -47,7 +47,7 @@
             <div class="single-product">
                 <!-- Product Image Start -->
                 <div class="pro-img">
-                    <a href="{{route('product.detail', $mw->reference)}}">
+                    <a href="{{route('product.detail', $mw->slug)}}">
                         <img class="primary-img" src="img/products/7.jpg" alt="single-product">
                         <img class="secondary-img" src="img/products/8.jpg" alt="single-product">
                     </a>
@@ -65,7 +65,7 @@
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
                     </div>                                
-                    <h4><a style="font-size: 0.85rem;" href="{{route('product.detail', $mw->reference)}}">{{Str::limit($mw->name, 50, '...')}}</a></h4>
+                    <h4><a style="font-size: 0.85rem;" href="{{route('product.detail', $mw->slug)}}">{{Str::limit($mw->name, 50, '...')}}</a></h4>
                     <p><span class="price">&#8358;{{$mw->amount}}</span><del class="prev-price">&#8358;{{$mw->previous_amount}}</del></p>
                     <div class="pro-actions">
                         <div class="actions-secondary">
@@ -131,7 +131,7 @@
                             @foreach($sh as $top)
                             <div class="single-product">
                                 <div class="pro-img">
-                                    <a href="{{route('product.detail', $top->reference)}}"><img class="img" src="img/products/1.jpg" alt="product-image"></a>
+                                    <a href="{{route('product.detail', $top->slug)}}"><img class="img" src="img/products/1.jpg" alt="product-image"></a>
                                 </div>
                                 <div class="pro-content">
                                     <div class="product-rating">
@@ -141,7 +141,7 @@
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
                                     </div>
-                                    <h4><a href="{{route('product.detail', $top->reference)}}">{{Str::limit($top->name, 20, '...')}}</a></h4>
+                                    <h4><a href="{{route('product.detail', $top->slug)}}">{{Str::limit($top->name, 20, '...')}}</a></h4>
                                     <p><span class="price">&#8358;{{$top->amount}}</span><del class="prev-price">&#8358;{{$top->previous_amount}}</del></p>
                                 </div>
                             </div>
@@ -175,7 +175,7 @@
                                 <div class="single-product">
                                     <!-- Product Image Start -->
                                     <div class="pro-img">
-                                        <a href="{{route('product.detail', $product->reference)}}">
+                                        <a href="{{route('product.detail', $product->slug)}}">
                                             <img class="primary-img" src="img/products/1.jpg" alt="single-product">
                                             <img class="secondary-img" src="img/products/2.jpg" alt="single-product">
                                         </a>
@@ -193,13 +193,13 @@
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                         </div>                                
-                                        <h4><a style="font-size: 0.85rem;"  href="{{route('product.detail', $product->reference)}}">{{Str::limit($product->name, 50, '...')}}</a></h4>
+                                        <h4><a style="font-size: 0.85rem;"  href="{{route('product.detail', $product->slug)}}">{{Str::limit($product->name, 50, '...')}}</a></h4>
                                         <p><span class="price">&#8358;{{$product->amount}}</span><del class="prev-price">&#8358;{{$product->previous_amount}}</del></p>
                                         <div class="pro-actions">
                                             <div class="actions-secondary">
-                                                <a href="{{route('product.detail', $product->reference)}}" data-toggle="tooltip" title="Add to Wishlist"><i class="fa fa-heart"></i></a>
+                                                <a href="{{route('product.detail', $product->slug)}}" data-toggle="tooltip" title="Add to Wishlist"><i class="fa fa-heart"></i></a>
                                                 <a class="add-cart" href="{{$product->link}}" data-toggle="tooltip" title="Add to Cart">Buy Now</a>
-                                                <a href="{{route('product.detail', $product->reference)}}" data-toggle="tooltip" title="Buy"><i class="fa fa-shopping-cart"></i></a>
+                                                <a href="{{route('product.detail', $product->slug)}}" data-toggle="tooltip" title="Buy"><i class="fa fa-shopping-cart"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -237,13 +237,13 @@
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                         </div>                                
-                                        <h4><a style="font-size: 0.85rem;" href="{{route('product.detail', $featured->reference)}}">{{Str::limit($featured->name, 50, '...')}}</a></h4>
+                                        <h4><a style="font-size: 0.85rem;" href="{{route('product.detail', $featured->slug)}}">{{Str::limit($featured->name, 50, '...')}}</a></h4>
                                         <p><span class="price">&#8358;{{$featured->amount}}</span><del class="prev-price">&#8358;{{$featured->previous_amount}}</del></p>
                                         <div class="pro-actions">
                                             <div class="actions-secondary">
                                                 <a href="#" data-toggle="tooltip" title="Add to Wishlist"><i class="fa fa-heart"></i></a>
                                                 <a class="add-cart" href="{{$featured->link}}" data-toggle="tooltip" title="Add to Cart">Buy Now</a>
-                                                <a href="{{route('product.detail', $featured->reference)}}" data-toggle="tooltip" title="Buy"><i class="fa fa-shopping-cart"></i></a>
+                                                <a href="{{route('product.detail', $featured->slug)}}" data-toggle="tooltip" title="Buy"><i class="fa fa-shopping-cart"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -345,7 +345,7 @@
                 @foreach($recommend as $rec)
                 <div class="single-product">
                     <div class="pro-img">
-                        <a href="{{route('product.detail', $rec->reference)}}"><img class="img" src="img/products/1.jpg" alt="product-image"></a>
+                        <a href="{{route('product.detail', $rec->slug)}}"><img class="img" src="img/products/1.jpg" alt="product-image"></a>
                     </div>
                     <div class="pro-content">
                         <div class="product-rating">
@@ -355,7 +355,7 @@
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
                         </div>
-                        <h4><a href="{{route('product.detail', $rec->reference)}}">{{Str::limit($rec->name, 30, '...')}}</a></h4>
+                        <h4><a href="{{route('product.detail', $rec->slug)}}">{{Str::limit($rec->name, 30, '...')}}</a></h4>
                         <p><span class="price">&#8358;{{$rec->amount}}</span><del class="prev-price">&#8358;{{$rec->previous_amount}}</del></p>
                     </div>
                 </div>

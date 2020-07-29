@@ -26,6 +26,7 @@ class CreateProductsTable extends Migration
             $table->boolean('instock')->default(0); // instock = 0; sold = 1;
             $table->boolean('status')->default(0); //unpublished = 0; published = 1;
             $table->string('link');
+            $table->string('slug');
             $table->timestamps();
         });
     }

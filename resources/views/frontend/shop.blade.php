@@ -63,7 +63,7 @@
                                     <div class="single-product">
                                         <!-- Product Image Start -->
                                         <div class="pro-img">
-                                            <a href="{{route('product.detail', $product->reference)}}">
+                                            <a href="{{route('product.detail', $product->slug)}}">
                                                 <img class="primary-img" src="img/products/1.jpg" alt="single-product">
                                                 <img class="secondary-img" src="img/products/2.jpg" alt="single-product">
                                             </a>
@@ -78,7 +78,7 @@
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                             </div>                                
-                                            <h4><a style="font-size: 0.85rem;" href="{{route('product.detail', $product->reference)}}">{{Str::limit($product->name, 50, '...')}}</a></h4>
+                                            <h4><a style="font-size: 0.85rem;" href="{{route('product.detail', $product->slug)}}">{{Str::limit($product->name, 50, '...')}}</a></h4>
                                             <p><span class="price">&#8358;{{$product->amount}}</span><del class="prev-price">&#8358;{{$product->previous_amount}}</del></p>
                                             <div class="pro-actions">
                                                 <div class="actions-secondary">
@@ -117,7 +117,7 @@
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
                                     </div>                                
-                                    <h4><a href="{{route('product.detail', $product->reference)}}">{{Str::limit($product->name, 50, '...')}}</a></h4>
+                                    <h4><a href="{{route('product.detail', $product->slug)}}">{{Str::limit($product->name, 50, '...')}}</a></h4>
                                     <p><span class="price">&#8358;{{$product->amount}}</span><del class="prev-price">&#8358;{{$product->previous_amount}}</del></p>
                                     <p>{{Str::limit($product->description, 100, '...')}}</p>
                                     <div class="pro-actions">

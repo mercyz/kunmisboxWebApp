@@ -17,11 +17,16 @@ class Product extends Model
         'link',
         'status',
         'featured',
-        'instock'
+        'instock',
+        'slug'
     ];
 
     public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+    public function productImage()
+    {
+        return $this->hasMany('App\Models\ProductImage', 'product_id');
     }
 }
