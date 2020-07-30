@@ -1,4 +1,4 @@
-@extends('layouts.frontend')
+@extends('layouts.frontend', ['title' => 'Products'])
 @section('content')
  <!-- Breadcrumb Start -->
 <div class="breadcrumb-area ptb-60 ptb-sm-30">

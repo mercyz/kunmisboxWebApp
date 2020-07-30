@@ -4,12 +4,16 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Kunmisbox</title>
-    <meta name="description" content="Default Description">
-    <meta name="keywords" content="E-commerce" />
+    <title>{{ config('app.name', 'KunmisBox') }} | {{ @$title }}</title>
+    <meta name="description" content="Your On stop shope for everything">
+    <meta name="canonical" content="Products, E-commerce, Shops, Onlinemarket">
+
+    @stack('meta')
+    <meta name="keywords" content="E-commerce, Onlinestore, onlineshop, Product, shop" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- place favicon.ico in the root directory -->
-    <link rel="shortcut icon" type="image/x-icon" href="img/icon/favicon.png">
+    {{-- <link rel="shortcut icon" type="image/x-icon" href="img/icon/favicon.png"> --}}
     <!-- Google Font css -->
     <link href="https://fonts.googleapis.com/css?family=Lily+Script+One" rel="stylesheet"> 
 

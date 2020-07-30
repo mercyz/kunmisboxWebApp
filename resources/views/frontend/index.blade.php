@@ -1,4 +1,4 @@
-@extends('layouts.frontend')
+@extends('layouts.frontend', ['title' => 'Your One stop Shop for everything'])
 @section('content')
 @include('partials.banner-slides')
 <!-- Banner Start -->

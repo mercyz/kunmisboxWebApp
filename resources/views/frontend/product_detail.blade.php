@@ -1,4 +1,17 @@
-@extends('layouts.frontend')
+@extends('layouts.frontend', ['title' => $product->name])
+@push('meta')
+<meta name="og:url" content="{{route('product.detail', $product->slug)}}">
+<meta name="og:title" content="{{$product->name}}">
+<meta name="description" content="{{Str::limit($product->body, 120)}}">
+<meta name="og:description" 
+    content="{{ Str::limit($product->description, 120) }}">
+<meta name="og:updated_time" content="{{$product->updated_at}}">
+<meta name="canonical" content="{{route('product.detail', $product->slug)}}">
+<meta name="og:type" content="Products">
+<meta name="og:image" content="{{$product->featured_image}}">
+<meta name="article:published_time" content="{{$product->created_at}}">
+<meta name="article:modified_time" content="{{$product->updated_at}}">
+@endpush
 @section('content')
  <!-- Breadcrumb Start -->
 <div class="breadcrumb-area ptb-60 ptb-sm-30">

@@ -1,4 +1,6 @@
 @extends('layouts.backend')
+@include('partials.backend_header')
+@include('partials.backend_aside')
 @section('content')
 <main class="app-content">
    <div class="app-title">
