@@ -15,6 +15,7 @@ Route::get('/adminaccess', 'Adminaccess\DashboardController@showLoginForm')->nam
 Route::group(['prefix' => 'adminaccess', 'middleware' => 'auth'], function () {
     Route::get('dashboard', 'Adminaccess\DashboardController@index')->name('dashboard');
     Route::resource('products', 'Adminaccess\ProductsController')->except('show');
+    Route::post('products/image/{id}/remover', 'Adminaccess\ProductsController@productImage')->name('delProImage');
     Route::resource('categories', 'Adminaccess\CategoriesController')->except('show');
     Route::resource('adbanner', 'Adminaccess\AdbannerController')->except('show');
 });

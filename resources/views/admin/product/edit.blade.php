@@ -16,6 +16,26 @@
             width: 100px;
             height: 80px;
         }
+        .bt-trash{
+                position: absolute;
+                /*bottom: 0;*/
+                /*left: 22px;*/
+                /*line-height: 25px;*/
+                border: medium none;
+                width: 25px;
+                height: 25px;
+                opacity: 1;
+                text-align: center;
+                background: #c6454a;
+                color: #fff;
+                padding-left: 6px;
+                transition: all .5s ease-in-out;
+                cursor: pointer;
+        }
+        .bt-trash:hover{
+            background:#fff;
+            color:#c6454a;
+        }
     </style>
 @endpush
 <main class="app-content">
@@ -66,10 +86,19 @@
                 <label>Product Buy Link To Konga <small class="text-danger">required * </small> </label>
                 <input type="text" value="{{$product->link}}"  name="link" class="form-control" placeholder="Enter Product Buy Link">
             </div>
-            <div class="form-group">
-                <label>Featured Image <small class="text-danger">required *</small></label>
-                <input type="file" name="featured_image" class="form-control">
-            </div>
+           <div class="row">
+                <div class="form-group col-md-6">
+                    <label>Featured Image  <small class="text-danger">required *</small></label>
+                    <input type="file" name="featured_image" class="form-control">
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Status <small class="text-danger">required *</small></label>
+                    <select class="form-control" name="status">
+                        <option value="1">Active</option>
+                        <option value="0">Inactive</option>
+                    </select>
+                </div>
+           </div>
             <div class="form-group">
                 <label>Product Images</label>
                 <input type="file" class="form-control" name="pro_image[]" multiple accept="image/*">
@@ -79,16 +108,17 @@
       </div>
     </div>
     <div class="col-md-4">
-        <div class="tile">
+        <div class="tile ">
             @if($product->featured_image)
             <div class="form-group img-holder">
                 <img src="{{asset('storage/uploads/products/featured/' .$product->featured_image)}}">
             </div>
             @endif
-            <div class="form-group img-holder d-flex ">
+            <div class="form-group img-holder d-flex block-3">
             @foreach($productImages as $productImage)
-                <div class="img-container mx-2">
+                <div class="img-container mx-1 ">
                     <img src="{{asset('storage/uploads/products/' .$productImage->name)}}">
+                    <button type="button" class="bt-trash" data-id="{{$productImage->id}}"><i class="fa fa-trash" data-id="{{$productImage->id}}"></i></button>
                 </div>
             @endforeach
             </div>
@@ -97,3 +127,36 @@
   </div>
 </main>
 @endsection
+@push('js-end')
+<script type="text/javascript">
+    const block = document.querySelector(".block-3");
+    block.addEventListener('click', deleteImageFunc);
+    function deleteImageFunc(e){
+        e.preventDefault();
+        const url = "{{route('delProImage', $productImage->id)}}";
+        const findMatch = (el) => {
+            if(el.classList.contains('fa', 'fa-trash')) return el;
+            if(el.classList.contains('bt-trash')) return el;
+            if(el === block) return false;
+            return findMatch(el.parentElement);
+        }
+        let actionBtn = findMatch(e.target)
+        console.log(actionBtn)
+        if(!actionBtn) return " ";
+        const formData = new FormData();
+            formData.append('_token', '{{csrf_token()}}');
+            formData.append('id', actionBtn.getAttribute('data-id'));
+        if(actionBtn){
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    "X-Requested-with": "XMLHttpRequest",
+                },
+                body:formData
+            }).then(function(res){
+                actionBtn.parentElement.outerHTML = '';
+            })
+          }
+    }    
+</script>
+@endpush

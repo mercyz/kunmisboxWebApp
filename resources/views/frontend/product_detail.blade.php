@@ -85,7 +85,7 @@
                         @endif
                     </div>
                     <div class="box-quantity">
-                        <a class="add-cart" href="{{$product->link}}">Buy Now</a>
+                        <a class="add-cart" href="{{$product->link}}" target="_blank">Buy Now</a>
                     </div>
                     {{-- <div class="product-link">
                         <ul class="list-inline">
@@ -205,7 +205,7 @@
                                 <div class="pro-actions">
                                     <div class="actions-secondary">
                                         <a href="#" data-toggle="tooltip" title="Add to Wishlist"><i class="fa fa-heart"></i></a>
-                                        <a class="add-cart" href="{{$related->link}}" data-toggle="tooltip" title="Buy Now">Buy Now</a>
+                                        <a class="add-cart" href="{{$related->link}}" target="_blank"  data-toggle="tooltip" title="Buy Now">Buy Now</a>
                                         <a href="#" data-toggle="tooltip" title="Buy Now"><i class="fa fa-shopping-cart"></i></a>
                                     </div>
                                 </div>

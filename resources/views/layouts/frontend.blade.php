@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>{{ config('app.name', 'KunmisBox') }} | {{ @$title }}</title>
-    <meta name="description" content="Your On stop shope for everything">
+    <meta name="description" content="Quality for everyone">
     <meta name="canonical" content="Products, E-commerce, Shops, Onlinemarket">
 
     @stack('meta')
@@ -53,6 +53,14 @@
         .logo a:hover{
             color:#000;
         }
+        .primary-img{
+            height: 210px;
+            object-fit: cover;
+        }
+        .secondary-img{
+            height: 210px;
+            object-fit: cover;
+        }
     </style>
 </head>
 
@@ -71,7 +79,7 @@
                     <!-- Header Top left Start -->                        
                     <div class="col-lg-4 col-md-12 d-center">
                         <div class="header-top-left">
-                            <img src="img/icon/call.png" alt="">Call Us : +11 222 3333
+                            <img src="img/icon/call.png" alt="">Call Us : +234 706 272 1167
                         </div>                        
                     </div>
                     <!-- Header Top left End -->
@@ -292,9 +300,10 @@
                         <h3>Contact us</h3>
                         <div class="footer-content">
                             <div class="loc-address">
-                                <span><i class="fa fa-map-marker"></i>184 Main Rd E, St Albans VIC 3021, Australia.</span>
-                                <span><i class="fa fa-envelope-o"></i>Mail Us : yourinfo@example.com</span>
-                                <span><i class="fa fa-phone"></i>Phone: + 00 254 254565 54</span>
+                                <span><i class="fa fa-map-marker"></i>Olatunji Ogudu/Ojota road, Lagos.</span>
+                                <span><i class="fa fa-envelope-o"></i>Mail Us: <a href="mailto:contact@kunmisbox.com.ng"> Contact@kunmisbox.com.ng</a></span>
+                                <span><i class="fa fa-whatsapp"></i>Whatsapp: +234 814 156 1116</span>
+                                <span><i class="fa fa-phone"></i>Phone: +234 706 272 1167</span>
                             </div>
                             <div class="payment-mth"><a href="#"><img class="img" src="img/footer/1.png" alt="payment-image"></a></div>
                         </div>
@@ -324,9 +333,7 @@
                         <h3 class="footer-title">My Account</h3>
                         <div class="footer-content">
                             <ul class="footer-list">
-                                <li><a href="account.html">My account</a></li>
-                                <li><a href="#">Checkout</a></li>
-                                <li><a href="#">Login</a></li>
+                                <li><a href="#">My account</a></li>
                                 <li><a href="#">address</a></li>
                                 <li><a href="#">Order status</a></li>
                                 <li><a href="#">Site Map</a></li>
@@ -341,8 +348,8 @@
                         <h3 class="footer-title">customer service</h3>
                         <div class="footer-content">
                             <ul class="footer-list">
-                                <li><a href="account.html">My account</a></li>
-                                <li><a href="#">New</a></li>
+                                <li><a href="#">My account</a></li>
+                                <li><a href="#">News</a></li>
                                 <li><a href="#">Gift Cards</a></li>
                                 <li><a href="#">Return Policy</a></li>
                                 <li><a href="#">Your Orders</a></li>
@@ -379,7 +386,8 @@
         <div class="footer-bottom off-white-bg2">
             <div class="container">
                 <div class="footer-bottom-content">
-                    <p class="copy-right-text">Copyright © <a  href="#">Jantrik</a> All Rights Reserved.</p>
+                    <p class="copy-right-text">Copyright © <a  href="/">KunmisBox</a> All Rights Reserved.</p>
+                     <p class="copy-right-text">Designed By <a  href="http://exceedbravo.com" target="_blank">Exceedbravo</a></p>
                     <div class="footer-social-content">
                         <ul class="social-content-list">
                             <li><a href="#"><i class="fa fa-twitter"></i></a></li>

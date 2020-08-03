@@ -1,4 +1,4 @@
-@extends('layouts.frontend', ['title' => 'Products'])
+@extends('layouts.frontend', ['title' => 'Products | Quality for everyone'])
 @section('content')
  <!-- Breadcrumb Start -->
 <div class="breadcrumb-area ptb-60 ptb-sm-30">
@@ -88,7 +88,7 @@
                                             <div class="pro-actions">
                                                 <div class="actions-secondary">
                                                     <a href="#" data-toggle="tooltip" title="Add to Wishlist"><i class="fa fa-heart"></i></a>
-                                                    <a class="add-cart" href="{{$product->link}}" data-toggle="tooltip" title="Add to Cart">Buy Now</a>
+                                                    <a class="add-cart" href="{{$product->link}}" target="_blank" data-toggle="tooltip" title="Add to Cart">Buy Now</a>
                                                     <a href="#" data-toggle="tooltip" title="Buy Now"><i class="fa fa-shopping-cart"></i></a>
                                                 </div>
                                             </div>
@@ -133,7 +133,7 @@
                                     <div class="pro-actions">
                                         <div class="actions-secondary">
                                             <a href="#" data-toggle="tooltip" title="Add to Wishlist"><i class="fa fa-heart"></i></a>
-                                            <a class="add-cart" href="{{$product->link}}" data-toggle="tooltip" title="Buy Now">Buy Now</a>
+                                            <a class="add-cart" href="{{$product->link}}" target="_blank" data-toggle="tooltip" title="Buy Now">Buy Now</a>
                                             <a href="#" data-toggle="tooltip" title="Buy Now"><i class="fa fa-shopping-cart"></i></a>
                                         </div>
                                     </div>

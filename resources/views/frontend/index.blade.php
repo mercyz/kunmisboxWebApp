@@ -1,4 +1,4 @@
-@extends('layouts.frontend', ['title' => 'Your One stop Shop for everything'])
+@extends('layouts.frontend', ['title' => 'Quality for everyone'])
 @section('content')
 @include('partials.banner-slides')
 <!-- Banner Start -->
@@ -69,7 +69,7 @@
                     <div class="pro-actions">
                         <div class="actions-secondary">
                             <a href="#" data-toggle="tooltip" title="Add to Wishlist"><i class="fa fa-heart"></i></a>
-                            <a class="add-cart" href="{{$mw->link}}" data-toggle="tooltip" title="Buy Now">Buy Now</a>
+                            <a class="add-cart" href="{{$mw->link}}" target="_blank" target="_blank" data-toggle="tooltip" title="Buy Now">Buy Now</a>
                             <a href="#" data-toggle="tooltip" title="Buy"><i class="fa fa-shopping-cart"></i></a>
                         </div>
                     </div>
@@ -209,7 +209,7 @@
                                         <div class="pro-actions">
                                             <div class="actions-secondary">
                                                 <a href="{{route('product.detail', $product->slug)}}" data-toggle="tooltip" title="Add to Wishlist"><i class="fa fa-heart"></i></a>
-                                                <a class="add-cart" href="{{$product->link}}" data-toggle="tooltip" title="Add to Cart">Buy Now</a>
+                                                <a class="add-cart" href="{{$product->link}}" target="_blank" data-toggle="tooltip" title="Add to Cart">Buy Now</a>
                                                 <a href="{{route('product.detail', $product->slug)}}" data-toggle="tooltip" title="Buy"><i class="fa fa-shopping-cart"></i></a>
                                             </div>
                                         </div>
@@ -258,7 +258,7 @@
                                         <div class="pro-actions">
                                             <div class="actions-secondary">
                                                 <a href="#" data-toggle="tooltip" title="Add to Wishlist"><i class="fa fa-heart"></i></a>
-                                                <a class="add-cart" href="{{$featured->link}}" data-toggle="tooltip" title="Add to Cart">Buy Now</a>
+                                                <a class="add-cart" href="{{$featured->link}}" target="_blank" data-toggle="tooltip" title="Add to Cart">Buy Now</a>
                                                 <a href="{{route('product.detail', $featured->slug)}}" data-toggle="tooltip" title="Buy"><i class="fa fa-shopping-cart"></i></a>
                                             </div>
                                         </div>

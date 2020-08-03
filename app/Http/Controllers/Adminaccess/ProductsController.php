@@ -75,7 +75,7 @@ class ProductsController extends Controller
     {
         $categories = Category::all();
         $product = Product::with('category')->where('reference', $product)->firstOrFail();
-        $productImages = ProductImage::where('product_id', $product->id)->get();
+        $productImages = ProductImage::where('product_id', $product->id)->take(4)->get();
         return view('admin.product.edit', compact('product', 'categories', 'productImages'));
     }
     public function update($product)
@@ -125,5 +125,11 @@ class ProductsController extends Controller
         $product->productImage()->delete();
         $product->delete();
         return back()->with('message', 'Product deleted successfully');
+    }
+    public function productImage($id)
+    {
+        $delImage =  ProductImage::find($id);
+        $delImage->delete();
+        return response()->json(['message', 'Product Image successfully deleted ']);
     }
 }
