@@ -1,4 +1,4 @@
-@extends('layouts.frontend', ['title' => 'Quality for everyone'])
+@extends('layouts.frontend', ['title' => 'Products | Quality for everyone'])
 @section('content')
  <!-- Breadcrumb Start -->
 <div class="breadcrumb-area ptb-60 ptb-sm-30">
@@ -47,7 +47,7 @@
                         <ul class="list-inline nav">
                             <li><a class="active" data-toggle="tab" href="#grid-view"><i class="fa fa-th"></i></a></li>
                             <li><a data-toggle="tab" href="#list-view"><i class="fa fa-list-ul"></i></a></li>
-                            <li><span class="grid-item-list"> Items 1 - {{$products->count()}}</span></li>
+                            <li><span class="grid-item-list text-capitalize">Products</span></li>
                         </ul>
                     </div>
                 </div>
@@ -63,13 +63,13 @@
                                     <div class="single-product">
                                         <!-- Product Image Start -->
                                         <div class="pro-img">
-                                            <a href="{{route('product.detail', $product->slug)}}">
+                                             <a href="{{route('product.detail', $product->slug)}}">
                                                 @if($product->featured_image !== 'productImage.png')
                                                 <img class="primary-img" src="{{asset('storage/uploads/products/featured/' . $product->featured_image)}}">
                                                 <img class="secondary-img" src="{{asset('storage/uploads/products/featured/' . $product->featured_image)}}">
                                                 @else
-                                                <img class="primary-img" src="img/products/1.jpg" alt="single-product">
-                                                <img class="secondary-img" src="img/products/2.jpg" alt="single-product">
+                                                <img class="primary-img" src="{{asset('img/products/1.jpg')}}" alt="single-product">
+                                                <img class="secondary-img" src="{{asset('img/products/2.jpg')}}" alt="single-product">
                                                 @endif
                                             </a>
                                         </div>
@@ -83,9 +83,9 @@
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                             </div>                                
-                                            <h4><a style="font-size: 0.85rem;" href="{{route('product.detail', $product->slug)}}">{{Str::limit($product->name, 50, '...')}}</a></h4>
+                                            <h4><a style="font-size: 0.85rem;" href="{{route('product.detail', $product->reference)}}">{{Str::limit($product->name, 50, '...')}}</a></h4>
                                             <p><span class="price">&#8358;{{$product->amount}}</span>
-                                                @if($product->previous_amount !== null)
+                                                @if($product->previous_amount !==null)
                                                 <del class="prev-price">&#8358;{{$product->previous_amount}}</del>
                                                 @endif
                                             </p>
@@ -111,15 +111,15 @@
                             <div class="single-product">
                                 <!-- Product Image Start -->
                                 <div class="pro-img">
-                                    <a href="{{route('product.detail', $product->slug)}}">
-                                        @if($product->featured_image !== 'productImage.png')
+                                     <a href="{{route('product.detail', $product->slug)}}">
+                                                @if($product->featured_image !== 'productImage.png')
                                                 <img class="primary-img" src="{{asset('storage/uploads/products/featured/' . $product->featured_image)}}">
                                                 <img class="secondary-img" src="{{asset('storage/uploads/products/featured/' . $product->featured_image)}}">
                                                 @else
-                                                <img class="primary-img" src="img/products/1.jpg" alt="single-product">
-                                                <img class="secondary-img" src="img/products/2.jpg" alt="single-product">
+                                                <img class="primary-img" src="{{asset('img/products/1.jpg')}}" alt="single-product">
+                                                <img class="secondary-img" src="{{asset('img/products/2.jpg')}}">
                                                 @endif
-                                    </a>
+                                            </a>
                                 </div>
                                 <!-- Product Image End -->
                                 <!-- Product Content Start -->
@@ -131,7 +131,7 @@
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
                                     </div>                                
-                                    <h4><a href="{{route('product.detail', $product->slug)}}">{{Str::limit($product->name, 50, '...')}}</a></h4>
+                                    <h4><a href="{{route('product.detail', $product->reference)}}">{{Str::limit($product->name, 50, '...')}}</a></h4>
                                     <p><span class="price">&#8358;{{$product->amount}}</span>
                                         @if($product->previous_amount !== null)
                                         <del class="prev-price">&#8358;{{$product->previous_amount}}</del>
@@ -164,6 +164,7 @@
         <!-- Row End -->
     </div>
     <!-- Container End -->
+</div>
 </div>
 <!-- Shop Page End -->
 @endsection

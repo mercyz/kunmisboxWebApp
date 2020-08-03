@@ -69,4 +69,12 @@ class HomeController extends Controller
     {
         return view('frontend.contact');
     }
+    public function search()
+    {
+        $query = request()->search;
+        $categories = Category::all();
+        $products = Product::with('productImage')->where('name', 'LIKE', '%'.$query.'%')
+            ->orWhere('description', 'LIKE', '%'.$query.'%')->where('status', 1)->paginate(20);
+        return view('frontend.search', compact('products', 'categories'));
+    }
 }

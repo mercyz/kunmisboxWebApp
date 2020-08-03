@@ -65,7 +65,11 @@
                         <i class="fa fa-star"></i>
                     </div>                                
                     <h4><a style="font-size: 0.85rem;" href="{{route('product.detail', $mw->slug)}}">{{Str::limit($mw->name, 50, '...')}}</a></h4>
-                    <p><span class="price">&#8358;{{$mw->amount}}</span><del class="prev-price">&#8358;{{$mw->previous_amount}}</del></p>
+                    <p><span class="price">&#8358;{{$mw->amount}}</span>
+                        @if($mw->previous_amount !== null)
+                        <del class="prev-price">&#8358;{{$mw->previous_amount}}</del>
+                        @endif
+                    </p>
                     <div class="pro-actions">
                         <div class="actions-secondary">
                             <a href="#" data-toggle="tooltip" title="Add to Wishlist"><i class="fa fa-heart"></i></a>
@@ -148,7 +152,11 @@
                                         <i class="fa fa-star"></i>
                                     </div>
                                     <h4><a href="{{route('product.detail', $top->slug)}}">{{Str::limit($top->name, 20, '...')}}</a></h4>
-                                    <p><span class="price">&#8358;{{$top->amount}}</span><del class="prev-price">&#8358;{{$top->previous_amount}}</del></p>
+                                    <p><span class="price">&#8358;{{$top->amount}}</span>
+                                        @if($top->previous_amount  !== null)
+                                        <del class="prev-price">&#8358;{{$top->previous_amount}}</del>
+                                        @endif
+                                    </p>
                                 </div>
                             </div>
                             @endforeach
@@ -205,7 +213,11 @@
                                             <i class="fa fa-star"></i>
                                         </div>                                
                                         <h4><a style="font-size: 0.85rem;"  href="{{route('product.detail', $product->slug)}}">{{Str::limit($product->name, 50, '...')}}</a></h4>
-                                        <p><span class="price">&#8358;{{$product->amount}}</span><del class="prev-price">&#8358;{{$product->previous_amount}}</del></p>
+                                        <p><span class="price">&#8358;{{$product->amount}}</span>
+                                            @if($product->previous_amount !== null)
+                                            <del class="prev-price">&#8358;{{$product->previous_amount}}</del>
+                                            @endif
+                                        </p>
                                         <div class="pro-actions">
                                             <div class="actions-secondary">
                                                 <a href="{{route('product.detail', $product->slug)}}" data-toggle="tooltip" title="Add to Wishlist"><i class="fa fa-heart"></i></a>
@@ -254,7 +266,11 @@
                                             <i class="fa fa-star"></i>
                                         </div>                                
                                         <h4><a style="font-size: 0.85rem;" href="{{route('product.detail', $featured->slug)}}">{{Str::limit($featured->name, 50, '...')}}</a></h4>
-                                        <p><span class="price">&#8358;{{$featured->amount}}</span><del class="prev-price">&#8358;{{$featured->previous_amount}}</del></p>
+                                        <p><span class="price">&#8358;{{$featured->amount}}</span>
+                                            @if($featured->previous_amount !== null)
+                                            <del class="prev-price">&#8358;{{$featured->previous_amount}}</del>
+                                            @endif
+                                        </p>
                                         <div class="pro-actions">
                                             <div class="actions-secondary">
                                                 <a href="#" data-toggle="tooltip" title="Add to Wishlist"><i class="fa fa-heart"></i></a>
@@ -385,7 +401,11 @@
                             <i class="fa fa-star"></i>
                         </div>
                         <h4><a href="{{route('product.detail', $rec->slug)}}">{{Str::limit($rec->name, 30, '...')}}</a></h4>
-                        <p><span class="price">&#8358;{{$rec->amount}}</span><del class="prev-price">&#8358;{{$rec->previous_amount}}</del></p>
+                        <p><span class="price">&#8358;{{$rec->amount}}</span>
+                            @if($rec->previous_amount !== null)
+                            <del class="prev-price">&#8358;{{$rec->previous_amount}}</del>
+                            @endif
+                        </p>
                     </div>
                 </div>
                 <!-- Single Product End -->

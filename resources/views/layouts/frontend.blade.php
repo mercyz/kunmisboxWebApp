@@ -44,6 +44,7 @@
 
     <!-- modernizr js -->
     <script src="{{asset('js/vendor/modernizr-2.8.3.min.js')}}"></script>
+    @stack('start-js')
     <style type="text/css">
         .logo a{
             font-size: 30px;
@@ -86,9 +87,9 @@
                     <!-- Search Box Start -->                                        
                     <div class="col-lg-4 col-md-6 ml-auto mr-auto">
                         <div class="search-box-view">
-                            <form action="#">
-                                <input type="text" class="email" placeholder="Search Your Product" name="product">
-                                <button type="submit" class="submit"></button>
+                            <form action="{{route('search')}}" method="get">
+                                <input type="text" class="email" id="search" placeholder="Search Your Product" name="search">
+                                <button type="submit" class="submit" id="searchBtn"></button>
                             </form>
                         </div>                                           
                     </div>
@@ -434,5 +435,4 @@
     <!-- main js -->
     <script src="{{asset('js/main.js')}}"></script>
 </body>
-
 </html>

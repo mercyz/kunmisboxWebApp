@@ -75,7 +75,11 @@
                         </div>
                     </div>
                     <div class="pro-price mb-10">
-                        <p><span class="price">&#8358;{{$product->amount}}</span><del class="prev-price">&#8358;{{$product->previous_amount}}</del></p>
+                        <p><span class="price">&#8358;{{$product->amount}}</span>
+                            @if($product->previous_amount !== null)
+                            <del class="prev-price">&#8358;{{$product->previous_amount}}</del>
+                            @endif
+                        </p>
                     </div>
                     <div class="pro-ref mb-15">
                     	@if($product->instock !== 1)

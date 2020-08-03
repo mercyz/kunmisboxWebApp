@@ -10,7 +10,7 @@
       <!-- Navbar Right Menu-->
       <ul class="app-nav">
         <li class="app-search">
-          <input class="app-search__input" type="search" placeholder="Search" />
+          <input class="app-search__input" type="search" id="search"  placeholder="Search" />
           <button class="app-search__button">
             <i class="fa fa-search"></i>
           </button>
