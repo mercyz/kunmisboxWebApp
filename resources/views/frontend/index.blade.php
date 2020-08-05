@@ -1,6 +1,25 @@
 @extends('layouts.frontend', ['title' => 'Quality for everyone'])
 @section('content')
 @include('partials.banner-slides')
+@push('start-css')
+<style>
+    .top-pro-img{
+        height: 100px;
+    }
+    .top-pro-img > a{
+        height: 100px
+    }
+    .top-pro-img > a > img{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+    }
+    .new-products .product-list{
+        background: whitesmoke;
+    }
+</style>
+
+@endpush
 <!-- Banner Start -->
 <div class="upper-banner banner pb-60">
     <div class="container">
@@ -44,7 +63,7 @@
                     <a href="{{route('product.detail', $mw->slug)}}">
                         @if($mw->featured_image !== 'productImage.png')
                             <img class="primary-img" src="{{asset('/storage/uploads/products/featured/' .$mw->featured_image)}}">
-                            <img class="secondary-img" src="{{asset('/storage/uploads/products/featured/' .$mw->featured_image)}}">
+                            {{-- <img class="secondary-img" src="{{asset('/storage/uploads/products/featured/' .$mw->featured_image)}}"> --}}
                         @else
                         <img class="primary-img" src="img/products/7.jpg" alt="single-product">
                         <img class="secondary-img" src="img/products/8.jpg" alt="single-product">
@@ -133,8 +152,8 @@
                             <!-- Single Product Start -->
                             @php $sh = collect($topProduct)->shuffle()->all() @endphp
                             @foreach($sh as $top)
-                            <div class="single-product">
-                                <div class="pro-img">
+                            <div class="single-product" style="flex-direction:row;">
+                                <div class="pro-img top-pro-img">
                                     <a href="{{route('product.detail', $top->slug)}}">
                                         @if($top->featured_image !== "productImage.png")
                                         <img class="img" src="{{asset('storage/uploads/products/featured/' . $top->featured_image)}}">
@@ -384,8 +403,8 @@
             <div class="double-pro">
                 <!-- Single Product Start -->
                 @foreach($recommend as $rec)
-                <div class="single-product">
-                    <div class="pro-img">
+                <div class="single-product" style="flex-direction:row;">
+                    <div class="pro-img top-pro-img">
                         @if($rec->featured_image !== 'productImage.png')
                         <a href="{{route('product.detail', $rec->slug)}}"><img class="img" src="{{asset('storage/uploads/products/featured/' . $rec->featured_image)}}"></a>
                         @else

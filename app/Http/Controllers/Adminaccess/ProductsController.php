@@ -50,6 +50,7 @@ class ProductsController extends Controller
             'previous_amount' => request('previous_amount'),
             'slug' => Str::slug(request('name')).'-'.uniqid(),
             'status' => request('status'),
+            'instock' => request('instock'),
         ]));
 
         //Handle Product Images
@@ -116,6 +117,7 @@ class ProductsController extends Controller
             'previous_amount' => request('previous_amount'),
             'slug' => Str::slug(request('name')).'-'.uniqid(),
             'status' => request('status'),
+            'instock' => request('instock'),
         ]));
         return redirect()->route('products.index')->with('message', 'Product updated successfully');
     }
@@ -126,8 +128,9 @@ class ProductsController extends Controller
         $product->delete();
         return back()->with('message', 'Product deleted successfully');
     }
-    public function productImage($id)
+    public function productImage($id)//this $id here does nothing really..
     {
+        $id = request("id");
         $delImage =  ProductImage::find($id);
         $delImage->delete();
         return response()->json(['message', 'Product Image successfully deleted ']);

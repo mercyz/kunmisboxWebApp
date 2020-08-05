@@ -13,6 +13,13 @@ class UserSeeder extends Seeder
     public function run()
     {
         User::truncate();
-        factory(User::class, 4)->create();
+        factory(User::class)->create([
+            'name' => 'Kunmisbox',
+            'email' => 'toba@kunmisbox.com.ng',
+            'email_verified_at' => now(),
+            'password' => bcrypt('#kUnMisBox2020'),
+            'remember_token' => Str::random(10),
+            'status' => 1,
+        ]);
     }
 }

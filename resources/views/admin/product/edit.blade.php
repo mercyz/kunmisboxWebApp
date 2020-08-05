@@ -87,9 +87,12 @@
                 <input type="text" value="{{$product->link}}"  name="link" class="form-control" placeholder="Enter Product Buy Link">
             </div>
            <div class="row">
-                <div class="form-group col-md-6">
-                    <label>Featured Image  <small class="text-danger">required *</small></label>
-                    <input type="file" name="featured_image" class="form-control">
+               <div class="form-group col-md-6">
+                    <label>Instock <small class="text-danger">required *</small></label>
+                    <select class="form-control" name="instock">
+                        <option value="1">In Stock</option>
+                        <option value="0">Sold</option>
+                    </select>
                 </div>
                 <div class="form-group col-md-6">
                     <label>Status <small class="text-danger">required *</small></label>
@@ -99,10 +102,16 @@
                     </select>
                 </div>
            </div>
-            <div class="form-group">
+           <div class="row">
+                <div class="form-group col-md-6">
+                    <label>Featured Image  <small class="text-danger">required *</small></label>
+                    <input type="file" name="featured_image" class="form-control">
+                </div>
+            <div class="form-group col-md-6">
                 <label>Product Images</label>
                 <input type="file" class="form-control" name="pro_image[]" multiple accept="image/*">
             </div>
+           </div>
             <button class="btn btn-success" type="submit">Update Product</button>
         </form>
       </div>
@@ -115,10 +124,11 @@
             </div>
             @endif
             <div class="form-group img-holder d-flex block-3">
-            @foreach($productImages as $productImage)
+
+            @foreach($product->productImage as $image)
                 <div class="img-container mx-1 ">
-                    <img src="{{asset('storage/uploads/products/' .$productImage->name)}}">
-                    <button type="button" class="bt-trash" data-id="{{$productImage->id}}"><i class="fa fa-trash" data-id="{{$productImage->id}}"></i></button>
+                    <img src="{{asset('storage/uploads/products/' .$image->name)}}">
+                    <button type="button" class="bt-trash" data-id="{{$image->id}}"><i class="fa fa-trash" data-id="{{$image->id}}"></i></button>
                 </div>
             @endforeach
             </div>
@@ -133,7 +143,7 @@
     block.addEventListener('click', deleteImageFunc);
     function deleteImageFunc(e){
         e.preventDefault();
-        const url = "{{route('delProImage', $productImage->id)}}";
+        const url = "{{route('delProImage', $product->id)}}"
         const findMatch = (el) => {
             if(el.classList.contains('fa', 'fa-trash')) return el;
             if(el.classList.contains('bt-trash')) return el;

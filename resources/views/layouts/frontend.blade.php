@@ -46,6 +46,9 @@
     <script src="{{asset('js/vendor/modernizr-2.8.3.min.js')}}"></script>
     @stack('start-js')
     <style type="text/css">
+        .best-seller-product{background: whitesmoke;}
+        .upper-banner{background: whitesmoke;}
+        .new-products{background: whitesmoke;}
         .logo a{
             font-size: 30px;
             font-weight: 800;
@@ -62,7 +65,38 @@
             height: 210px;
             object-fit: cover;
         }
+        .single-brand{
+            height:100px;
+        }
+        .single-brand > a > img{
+            object-fit: cover;
+            width: 100%;
+        }
+        .single-product{
+            display: flex;
+            flex-direction: column;
+            background:1px 2px 3px #eee;
+        }
+        .pro-img a{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 210px;
+        }
+        .pro-img a > img{
+            object-fit: contain;
+        }
+        .company-policy{
+            padding-top:20px;
+            padding-bottom:20px;
+            margin-bottom:20px;
+            margin-top:20px;
+        }
+        .best-seller-product{
+            padding-top:40px;
+        }
     </style>
+    @stack('start-css')
 </head>
 
 <body>
@@ -237,22 +271,22 @@
         <!-- Brand Banner Start -->
         <div class="brand-banner owl-carousel">
             <div class="single-brand">
-                <a href="#"><img class="img" src="img/brand/1.png" alt="brand-image"></a>
+                <a href="#"><img class="img" src="{{asset('img/brand/carter.jpeg')}}" alt="brand-image"></a>
             </div>
             <div class="single-brand">
-                <a href="#"><img src="img/brand/2.png" alt="brand-image"></a>
+                <a href="#"><img src="{{('img/brand/george.jpeg')}}" alt="brand-image"></a>
             </div>
             <div class="single-brand">
-                <a href="#"><img src="img/brand/3.png" alt="brand-image"></a>
+                <a href="#"><img src="{{('img/brand/h&m.jpeg')}}" alt="brand-image"></a>
             </div>
             <div class="single-brand">
-                <a href="#"><img src="img/brand/4.png" alt="brand-image"></a>
+                <a href="#"><img src="{{('img/brand/osha.jpeg')}}" alt="brand-image"></a>
             </div>
             <div class="single-brand">
-                <a href="#"><img src="img/brand/5.png" alt="brand-image"></a>
+                <a href="#"><img src="{{('img/brand/peacoak.jpeg')}}" alt="brand-image"></a>
             </div>
             <div class="single-brand">
-                <a href="#"><img class="img" src="img/brand/1.png" alt="brand-image"></a>
+                <a href="#"><img class="img" src="{{('img/brand/tm.jpeg')}}" alt="brand-image"></a>
             </div>
             <div class="single-brand">
                 <a href="#"><img src="img/brand/2.png" alt="brand-image"></a>

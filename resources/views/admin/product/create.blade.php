@@ -54,22 +54,32 @@
                 <input type="text" name="link" class="form-control" placeholder="Enter Product Buy Link">
             </div>
            <div class="row">
-                <div class="form-group col-md-6">
-                    <label>Featured Image  <small class="text-danger">required *</small></label>
-                    <input type="file" name="featured_image" class="form-control">
-                </div>
-                <div class="form-group col-md-6">
-                    <label>Status <small class="text-danger">required *</small></label>
+                 <div class="form-group col-md-6">
+                    <label>Instock <small class="text-danger">required *</small></label>
                     <select class="form-control" name="status">
                         <option value="1">Active</option>
                         <option value="0">Inactive</option>
                     </select>
                 </div>
+                <div class="form-group col-md-6">
+                    <label>Status <small class="text-danger">required *</small></label>
+                    <select class="form-control" name="instock">
+                        <option value="1">In Stock</option>
+                        <option value="0">Sold</option>
+                    </select>
+                </div>
            </div>
-            <div class="form-group">
+           <div class="row">
+            <div class="form-group col-md-6">
+                    <label>Featured Image  <small class="text-danger">required *</small></label>
+                    <input type="file" name="featured_image" class="form-control">
+                </div>
+            <div class="form-group col-md-6">
                 <label>Product Images <small>(You can select multiple images)</small></label>
                 <input type="file" class="form-control" name="pro_image[]" multiple accept="image/*">
             </div>
+               
+           </div>
             <button class="btn btn-success" type="submit">Add Product</button>
         </form>
       </div>
