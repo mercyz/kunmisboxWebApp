@@ -3,10 +3,7 @@
 namespace App\Http\Controllers\Frontend ;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Collection;
-use Illuminate\Http\Request;
 use App\Models\ProductImage;
-use Illuminate\Support\Str;
 use App\Models\Adbanner;
 use App\Models\Category;
 use App\Models\Product;
@@ -18,11 +15,11 @@ class HomeController extends Controller
         $categories = Category::all();
         $men_women = Product::with('productImage')->where('status', 1)
             ->wherehas('category', function ($query) use ($categories) {
-                $query->where('name', 'women')->orWhere('name', 'men')->orWhere('name', 'kids');
+                $query->wherein('name', ['women', 'men', 'kids']);
             })->take(15)->latest()->get();
 
         $products = Product::with('productImage')->where('status', 1)->latest()->take(7)->get();
-        
+
         $featuredProducts = Product::with('productImage')
             ->where(['status' => 1, 'featured' => 1])->take(7)->get();
 

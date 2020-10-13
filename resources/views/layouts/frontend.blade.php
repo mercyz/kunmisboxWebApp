@@ -15,7 +15,7 @@
     <!-- place favicon.ico in the root directory -->
     {{-- <link rel="shortcut icon" type="image/x-icon" href="img/icon/favicon.png"> --}}
     <!-- Google Font css -->
-    <link href="https://fonts.googleapis.com/css?family=Lily+Script+One" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Lily+Script+One" rel="stylesheet">
 
     <!-- mobile menu css -->
     <link rel="stylesheet" href="{{asset('css/meanmenu.min.css')}}">
@@ -32,7 +32,7 @@
     <!-- fontawesome css -->
     <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
      <!-- fancybox css -->
-    <link rel="stylesheet" href="{{asset('css/jquery.fancybox.css')}}">     
+    <link rel="stylesheet" href="{{asset('css/jquery.fancybox.css')}}">
     <!-- bootstrap css -->
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <!-- default css  -->
@@ -46,9 +46,6 @@
     <script src="{{asset('js/vendor/modernizr-2.8.3.min.js')}}"></script>
     @stack('start-js')
     <style type="text/css">
-        .best-seller-product{background: whitesmoke;}
-        .upper-banner{background: whitesmoke;}
-        .new-products{background: whitesmoke;}
         .logo a{
             font-size: 30px;
             font-weight: 800;
@@ -111,24 +108,24 @@
         <div class="header-top">
             <div class="container">
                 <div class="row">
-                    <!-- Header Top left Start -->                        
+                    <!-- Header Top left Start -->
                     <div class="col-lg-4 col-md-12 d-center">
                         <div class="header-top-left">
-                            <img src="img/icon/call.png" alt="">Call Us : +234 706 272 1167
-                        </div>                        
+                            <img src="img/icon/call.png" alt="">Call Us : +234 814 156 1116
+                        </div>
                     </div>
                     <!-- Header Top left End -->
-                    <!-- Search Box Start -->                                        
+                    <!-- Search Box Start -->
                     <div class="col-lg-4 col-md-6 ml-auto mr-auto">
                         <div class="search-box-view">
                             <form action="{{route('search')}}" method="get">
                                 <input type="text" class="email" id="search" placeholder="Search Your Product" name="search">
                                 <button type="submit" class="submit" id="searchBtn"></button>
                             </form>
-                        </div>                                           
+                        </div>
                     </div>
-                    <!-- Search Box End --> 
-                    <!-- Header Top Right Start -->                                       
+                    <!-- Search Box End -->
+                    <!-- Header Top Right Start -->
                     <div class="col-lg-4 col-md-12">
                         <div class="header-top-right">
                             <ul class="header-list-menu f-right">
@@ -140,7 +137,7 @@
                                         <li><a href="#">Russian</a></li>
                                     </ul>
                                 </li>
-                                <!-- Language End -->                                
+                                <!-- Language End -->
                                 <!-- Currency Start -->
                                 <li><a href="#">Currency:  USD <i class="fa fa-angle-down"></i></a>
                                     <ul class="ht-dropdown">
@@ -193,9 +190,9 @@
                                   {{--   <ul class="ht-dropdown">
                                         <li><a href="login.html">Login</a></li>
                                         <li><a href="register.html">Register</a></li>
-                                        <li><a href="account.html">Account</a></li>                                            
+                                        <li><a href="account.html">Account</a></li>
                                     </ul> --}}
-                                </li>                                    
+                                </li>
                                 <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
                                 <li><a href="#"><i class="fa fa-shopping-basket"></i></a>
                                    {{--  <ul class="ht-dropdown main-cart-box">
@@ -233,7 +230,7 @@
                                             </div>
                                             <!-- Cart Footer Inner End -->
                                         </li>
-                                    </ul> 
+                                    </ul>
                                  </li> --}}
                             </ul>
                         </div>
@@ -251,7 +248,7 @@
                             </nav>
                         </div>
                     </div>
-                    <!-- Mobile Menu  End -->                        
+                    <!-- Mobile Menu  End -->
                 </div>
                 <!-- Row End -->
             </div>
@@ -288,20 +285,8 @@
             <div class="single-brand">
                 <a href="#"><img class="img" src="{{('img/brand/tm.jpeg')}}" alt="brand-image"></a>
             </div>
-            <div class="single-brand">
-                <a href="#"><img src="img/brand/2.png" alt="brand-image"></a>
-            </div>
-            <div class="single-brand">
-                <a href="#"><img src="img/brand/3.png" alt="brand-image"></a>
-            </div>
-            <div class="single-brand">
-                <a href="#"><img src="img/brand/4.png" alt="brand-image"></a>
-            </div>
-            <div class="single-brand">
-                <a href="#"><img src="img/brand/5.png" alt="brand-image"></a>
-            </div>
         </div>
-        <!-- Brand Banner End -->                
+        <!-- Brand Banner End -->
     </div>
 </div>
 <!-- Brand Logo End -->
@@ -325,9 +310,9 @@
                                 <button type="submit" class="submit">subscribe</button>
                             </form>
                         </div>
-                     </div>                            
+                     </div>
                 </div>
-            </div>                    
+            </div>
             <div class="row">
                 <!-- Single Footer Start -->
                 <div class="col-lg-4  col-md-7 col-sm-6">
@@ -338,7 +323,7 @@
                                 <span><i class="fa fa-map-marker"></i>Olatunji Ogudu/Ojota road, Lagos.</span>
                                 <span><i class="fa fa-envelope-o"></i>Mail Us: <a href="mailto:contact@kunmisbox.com.ng"> Contact@kunmisbox.com.ng</a></span>
                                 <span><i class="fa fa-whatsapp"></i>Whatsapp: +234 814 156 1116</span>
-                                <span><i class="fa fa-phone"></i>Phone: +234 706 272 1167</span>
+                                <span><i class="fa fa-phone"></i>Phone: +234 814 156 1116</span>
                             </div>
                             <div class="payment-mth"><a href="#"><img class="img" src="img/footer/1.png" alt="payment-image"></a></div>
                         </div>
@@ -425,10 +410,10 @@
                      <p class="copy-right-text">Designed By <a  href="http://exceedbravo.com" target="_blank">Exceedbravo</a></p>
                     <div class="footer-social-content">
                         <ul class="social-content-list">
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-wifi"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
                             <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-whatsapp"></i></a></li>
+                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                             <li><a href="#"><i class="fa fa-youtube"></i></a></li>
                         </ul>
                     </div>

@@ -33,11 +33,11 @@
                 @foreach($categories as $category)
                     <option value="{{$category->id}}" class="text-capitalize">{{$category->name}}</option>
                 @endforeach
-                </select> 
+                </select>
             </div>
             <div class="form-group">
                 <label>Description</label>
-                <textarea name="description" class="form-control" cols="30" rows="10"></textarea>   
+                <textarea name="description" class="form-control" cols="30" rows="10"></textarea>
             </div>
             <div class="row">
                 <div class="form-group col-md-6">
@@ -55,17 +55,17 @@
             </div>
            <div class="row">
                  <div class="form-group col-md-6">
-                    <label>Instock <small class="text-danger">required *</small></label>
+                    <label>Status<small class="text-danger">required *</small></label>
                     <select class="form-control" name="status">
-                        <option value="1">Active</option>
-                        <option value="0">Inactive</option>
+                        <option value="1">Publish</option>
+                        <option value="0">Unpublish</option>
                     </select>
                 </div>
                 <div class="form-group col-md-6">
-                    <label>Status <small class="text-danger">required *</small></label>
+                    <label>Product Instock <small class="text-danger">required *</small></label>
                     <select class="form-control" name="instock">
-                        <option value="1">In Stock</option>
-                        <option value="0">Sold</option>
+                        <option value="0">In Stock</option>
+                        <option value="1">Sold</option>
                     </select>
                 </div>
            </div>
@@ -78,7 +78,7 @@
                 <label>Product Images <small>(You can select multiple images)</small></label>
                 <input type="file" class="form-control" name="pro_image[]" multiple accept="image/*">
             </div>
-               
+
            </div>
             <button class="btn btn-success" type="submit">Add Product</button>
         </form>

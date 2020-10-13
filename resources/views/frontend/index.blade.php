@@ -43,7 +43,7 @@
        <!-- Row End -->
     </div>
     <!-- Container End -->
-</div>                                
+</div>
 <!-- Banner End -->
 
 
@@ -67,14 +67,14 @@
                         @else
                         <img class="primary-img" src="img/products/7.jpg" alt="single-product">
                         <img class="secondary-img" src="img/products/8.jpg" alt="single-product">
-                       @endif 
+                       @endif
                     </a>
                 </div>
                 <!-- Product Image End -->
                 <!-- Product Content Start -->
                 <div class="pro-content">
-                	@if($mw->instock === 1)
-                		<span class="sticker-new">sold</span>
+                	@if($mw->instock !== 0)
+                		<span class="sticker-new">Sold</span>
                 	@endif
                     <div class="product-rating">
                         <i class="fa fa-star"></i>
@@ -82,7 +82,7 @@
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
-                    </div>                                
+                    </div>
                     <h4><a style="font-size: 0.85rem;" href="{{route('product.detail', $mw->slug)}}">{{Str::limit($mw->name, 50, '...')}}</a></h4>
                     <p><span class="price">&#8358;{{$mw->amount}}</span>
                         @if($mw->previous_amount !== null)
@@ -98,17 +98,17 @@
                     </div>
                 </div>
                 <!-- Product Content End -->
-            </div>   
-            @endforeach                                     
+            </div>
+            @endforeach
             <!-- Single Product End -->
         </div>
         <!-- Best Product Activation End -->
     </div>
     <!-- Container End -->
 </div>
-<!-- Best Product End --> 
+<!-- Best Product End -->
  <!-- Banner Start -->
-<div class="upper-banner banner pb-60">
+<div class="upper-banner banner pb-60" style="background:#fbfbfb;">
     <div class="container">
        <div class="row">
         @if($secondBanners->count() === 2)
@@ -130,7 +130,7 @@
        <!-- Row End -->
     </div>
     <!-- Container End -->
-</div>                                
+</div>
 <!-- Banner End -->
 
 
@@ -179,7 +179,7 @@
                                 </div>
                             </div>
                             @endforeach
-                           
+
                             <!-- Single Product End -->
                         </div>
                         <!-- Double Product End -->
@@ -213,16 +213,16 @@
                                             <img class="primary-img" src="{{asset('storage/uploads/products/featured/' . $product->featured_image)}}">
                                             <img class="secondary-img" src="{{asset('storage/uploads/products/featured/' . $product->featured_image)}}">
                                             @else
-                                              <img class="primary-img" src="img/products/1.jpg" alt="single-product">
-                                            <img class="secondary-img" src="img/products/2.jpg" alt="single-product">
+                                                <img class="primary-img" src="img/products/1.jpg" alt="single-product">
+                                                <img class="secondary-img" src="img/products/2.jpg" alt="single-product">
                                             @endif
                                         </a>
                                     </div>
                                     <!-- Product Image End -->
                                     <!-- Product Content Start -->
                                     <div class="pro-content">
-                                    	@if($product->instock === 1)
-                                    		<span class="sticker-new">sold</span>
+                                    	@if($product->instock !== 0)
+                                    		<span class="sticker-new">Sold</span>
                                     	@endif
                                         <div class="product-rating">
                                             <i class="fa fa-star"></i>
@@ -230,7 +230,7 @@
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
-                                        </div>                                
+                                        </div>
                                         <h4><a style="font-size: 0.85rem;"  href="{{route('product.detail', $product->slug)}}">{{Str::limit($product->name, 50, '...')}}</a></h4>
                                         <p><span class="price">&#8358;{{$product->amount}}</span>
                                             @if($product->previous_amount !== null)
@@ -246,8 +246,8 @@
                                         </div>
                                     </div>
                                     <!-- Product Content End -->
-                                </div>                                        
-                                <!-- Single Product End -->  
+                                </div>
+                                <!-- Single Product End -->
                                @endforeach
                             </div>
                             <!-- New Products Activation End -->
@@ -274,8 +274,8 @@
                                     <!-- Product Image End -->
                                     <!-- Product Content Start -->
                                     <div class="pro-content">
-                                    	@if($featured->instock === 1)
-                                    		<span class="sticker-new">sold</span>
+                                    	@if($featured->instock !== 0)
+                                    		<span class="sticker-new">Sold</span>
                                     	@endif
                                         <div class="product-rating">
                                             <i class="fa fa-star"></i>
@@ -283,7 +283,7 @@
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
                                             <i class="fa fa-star"></i>
-                                        </div>                                
+                                        </div>
                                         <h4><a style="font-size: 0.85rem;" href="{{route('product.detail', $featured->slug)}}">{{Str::limit($featured->name, 50, '...')}}</a></h4>
                                         <p><span class="price">&#8358;{{$featured->amount}}</span>
                                             @if($featured->previous_amount !== null)
@@ -299,7 +299,7 @@
                                         </div>
                                     </div>
                                     <!-- Product Content End -->
-                                </div>                                        
+                                </div>
                                 <!-- Single Product End -->
                                 @endforeach
                             </div>
@@ -316,11 +316,11 @@
                      <a href="#"><img src="{{asset('img/banner/tab-banner.jpg')}}" alt="slider-banner"></a>
                      @endif
                     @endforeach
-                   
+
                     @endif
                  </div>
                 </div>
-                <!-- New Pro Content End -->                        
+                <!-- New Pro Content End -->
             </div>
         </div>
 
@@ -388,10 +388,10 @@
         </div>
     </div>
 </div>
-<!-- Company Policy End --> 
+<!-- Company Policy End -->
 
  <!-- Best Products Start -->
-<div class="best-seller-product pb-50 pb-sm-40">
+<div class="best-seller-product pb-50 pb-sm-40" style="background: #ffffff;">
     <div class="container">
         <div class="group-title">
             <h2>Recommended For You</h2>
@@ -431,11 +431,11 @@
                 @endforeach
             </div>
             @endforeach
-            <!-- Double Product End --> 
+            <!-- Double Product End -->
         </div>
         <!-- Best Product Activation End -->
     </div>
     <!-- Container End -->
 </div>
-<!-- Best Product End --> 
+<!-- Best Product End -->
 @endsection

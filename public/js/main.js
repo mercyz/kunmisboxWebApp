@@ -260,7 +260,7 @@ $('.brand-banner').on('changed.owl.carousel initialized.owl.carousel', function 
 
 
         }).owlCarousel({
-        loop: false,
+        loop: true,
         nav: false,
         dots: false,
         smartSpeed: 1200,
@@ -450,7 +450,7 @@ $('.brand-banner').on('changed.owl.carousel initialized.owl.carousel', function 
                 }
             }
         })
-    
+
     /*-------------------------------------
     20. Blog Realted Post activation
     --------------------------------------*/
@@ -481,7 +481,7 @@ $('.brand-banner').on('changed.owl.carousel initialized.owl.carousel', function 
             }
         }
     })
-    
+
     /*----------------------------------------------------
     21.Best Seller  Unique Activation
     -----------------------------------------------------*/
@@ -509,6 +509,6 @@ $('.brand-banner').on('changed.owl.carousel initialized.owl.carousel', function 
             }
         }
     })
-     
-    
+
+
 })(jQuery);
